@@ -31,7 +31,7 @@ const Images = () => {
           key={i}
           src={img}
           alt={`Slide ${i + 1}`}
-          className={`home-image-1 position-absolute top-0 start-0 w-100 h-100 transition-opacity ${
+          className={`home-images position-absolute top-0 start-0 transition-opacity ${
             i === index ? "opacity-100 z-1" : "opacity-0 z-0"
           }`}
         />

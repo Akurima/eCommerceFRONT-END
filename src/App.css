@@ -42,19 +42,28 @@ body {
 }
 
 .header {
-  background-color: #4b2e1d;
+  background: linear-gradient(to right, #4a3d32, #2e1701);
   color: white;
   height: 80px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  top: 0;
+  transition: background 0.4s ease;
 }
 
-.home-image-1 {
+.home-images {
   margin-top: 1px;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
-  display: block;
   box-shadow: 0 8px 20px rgba(31, 16, 8, 1); /* Sombra suave */
   border-radius: 1px; /* Opcional, da un efecto más moderno */
+}
+
+.text-header {
+  font-size: 16px;
+  color: #e7dac8;
+  text-align: center;
+  margin-top: 3px;
 }
 
 .bg-success {
