@@ -1,13 +1,14 @@
-import Header from '../components/Header/Header'
-import './App.css'
+import Header from "../components/Header";
+import Images from "../components/Images";
+import "./App.css";
 
 function App() {
-
   return (
     <>
-    <Header />
+      <Header />
+      <Images />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
