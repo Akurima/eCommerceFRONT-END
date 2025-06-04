@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
-import "../src/App.css";
+import "../src/App.css"; // Asegúrate de que la ruta sea correcta
 
+// Si estás usando imágenes locales, lo ideal sería importarlas así:
+// import img1 from "../images/frontpage/img1.png";
+// Pero si están en /public/images, las rutas pueden ser así:
 const images = [
-  "../images/frontpage/img1.png",
-  "../images/frontpage/img2.png",
-  "../images/frontpage/img3.png",
-  "../images/frontpage/img4.png",
-  "../images/frontpage/img5.png",
-  "../images/frontpage/img6.png",
-  "../images/frontpage/img7.png",
-  "../images/frontpage/img8.png",
-  "../images/frontpage/img9.png",
+  "/images/frontpage/img1.png",
+  "/images/frontpage/img2.png",
+  "/images/frontpage/img3.png",
+  "/images/frontpage/img4.png",
+  "/images/frontpage/img5.png",
+  "/images/frontpage/img6.png",
+  "/images/frontpage/img7.png",
+  "/images/frontpage/img8.png",
+  "/images/frontpage/img9.png",
 ];
 
 const Images = () => {
@@ -30,7 +33,7 @@ const Images = () => {
         <img
           key={i}
           src={img}
-          alt={`Slide ${i + 1}`}
+          alt={`Imagen ${i + 1}`}
           className={`home-images position-absolute top-0 start-0 transition-opacity ${
             i === index ? "opacity-100 z-1" : "opacity-0 z-0"
           }`}
