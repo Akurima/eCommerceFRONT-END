@@ -134,8 +134,16 @@ background-color: white;
   height: 300px;
   object-fit: cover;
   border-radius: 5px;
+  border-radius: 80px;
+  padding: 8px;
+  
 }
 
+.cards-container {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
 
 
 /*FOOTER START*/

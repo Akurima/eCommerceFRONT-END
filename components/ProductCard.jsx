@@ -1,14 +1,71 @@
-function ProductCard() {
-  return (
-    <div className="card-div" style={{ width: '20rem' }}>
-  <img src="https://www.tasteofhome.com/wp-content/uploads/2017/09/exps37407_THE1213734_37407_WEB.jpg" className="card-img-top" alt="..." />
-  <div className="card-body">
-    <h5 className="card-title">Nombre del Producto</h5>
-    <p className="card-text">Descripciòn del producto</p>
-    <a href="#" className="btn btn-primary">Comprar</a>
-  </div>
-</div>
-  )
-}
+// src/components/ProductCard.jsx
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default ProductCard
+const ProductCard = ({ image, title, description, price, onAddToCart }) => {
+  return (
+    <div className="cards-container container row gx-3">
+    <div className="card col shadow-sm" style={{ width: '18rem' }}>
+      <img src={image} className="card-img-top" alt={title} />
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text text-muted">{description}</p>
+        <h6 className="text-success fw-bold mb-3">${price}</h6>
+        <button
+          className="btn btn-primary mt-auto"
+          onClick={onAddToCart}
+        >
+          Agregar al carrito 🛒
+        </button>
+      </div>
+    </div>
+    <div className="card col shadow-sm" style={{ width: '18rem' }}>
+      <img src={image} className="card-img-top" alt={title} />
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text text-muted">{description}</p>
+        <h6 className="text-success fw-bold mb-3">${price}</h6>
+        <button
+          className="btn btn-primary mt-auto"
+          onClick={onAddToCart}
+        >
+          Agregar al carrito 🛒
+        </button>
+      </div>
+    </div>
+    <div className="card col shadow-sm" style={{ width: '18rem' }}>
+      <img src={image} className="card-img-top" alt={title} />
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text text-muted">{description}</p>
+        <h6 className="text-success fw-bold mb-3">${price}</h6>
+        <button
+          className="btn btn-primary mt-auto"
+          onClick={onAddToCart}
+        >
+          Agregar al carrito 🛒
+        </button>
+      </div>
+    </div>
+
+    <div className="card col shadow-sm" style={{ width: '18rem' }}>
+      <img src={image} className="card-img-top" alt={title} />
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text text-muted">{description}</p>
+        <h6 className="text-success fw-bold mb-3">${price}</h6>
+        <button
+          className="btn btn-primary mt-auto"
+          onClick={onAddToCart}
+        >
+          Agregar al carrito 🛒
+        </button>
+      </div>
+    </div>
+    
+    
+    </div>
+  );
+};
+
+export default ProductCard;
