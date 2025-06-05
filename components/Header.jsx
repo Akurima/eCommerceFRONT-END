@@ -7,8 +7,9 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Header = () => (
   <header className="header d-flex justify-content-between align-items-center px-4">
+    <h2 className="bruma">Bruma</h2>
     {/* Columna vacía para separación izquierda si querés algo luego */}
-    <div style={{ width: "200px" }}></div>
+    <div style={{ width: "1px" }}></div>
 
     {/* Íconos centrados */}
     <div className="d-flex justify-content-center align-items-center gap-4">
@@ -31,11 +32,15 @@ const Header = () => (
         <SearchIcon
           style={{
             fontSize: 20,
-            color: "#e7dac8",
+            color: "#4b6858",
             marginTop: "18px",
           }}
         />
-        <input type="text" className="minimal-input" />
+        <input
+          style={{ color: "4b6858" }}
+          type="text"
+          className="minimal-input"
+        />
       </div>
       <ShoppingCartIcon className="shop-icon" style={{ fontSize: 35 }} />
     </div>

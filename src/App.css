@@ -1,14 +1,14 @@
-@import url("https://fonts.cdnfonts.com/css/konstant-grotesk");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Philosopher", sans-serif;
 }
 
-body {
-  font-family: "Konstant Grotesk", sans-serif;
-  background-color: #e7dac8;
+.bruma {
+  color: #4b6858;
 }
 
 /* HEADER ICONS */
@@ -19,6 +19,7 @@ body {
   position: relative;
   cursor: pointer;
   transition: color 0.3s ease;
+  color: #4b6858;
 }
 
 .icons-header::after {
@@ -45,12 +46,16 @@ body {
 
 /* HEADER */
 .header {
-  background: linear-gradient(to right, #4a3d32, #2e1701);
+  background: #f3eacc;
   color: white;
   height: 65px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   top: 0;
   transition: background 0.4s ease;
+}
+
+.shop-icon {
+  color: #fa9f42;
 }
 
 /* BOOTSTRAP COLOR OVERRIDE */
@@ -66,6 +71,7 @@ body {
   object-fit: cover;
   box-shadow: 0 8px 20px rgba(31, 16, 8, 1);
   border-radius: 1px;
+  object-position: 0 35%;
 }
 
 /* IMAGE SLIDER */
@@ -143,6 +149,16 @@ body {
   border-bottom: 1.5px solid white;
 }
 
+/* TEXT BEFORE CARDS*/
+
+.text {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  color: #903c20;
+  font-family: "Philosopher", sans-serif;
+}
+
 /* CARDS */
 .cards-container {
   width: 100%;
@@ -197,9 +213,13 @@ body {
 }
 
 /* FOOTER */
+
+.fext-footer {
+  color: #4b6858;
+}
 .div-footer {
-  background: linear-gradient(to right, #4a3d32, #2e1701);
-  color: white;
+  background: hsl(46, 62%, 88%);
+  color: #4b6858;
   height: 80px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   top: 0;

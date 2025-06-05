@@ -18,12 +18,12 @@ const ProductCard = ({ products, onAddToCart }) => {
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{product.title}</h5>
                 <p className="card-text text-muted">{product.description}</p>
-                <h6 className="text-success fw-bold mb-3">${product.price}</h6>
+
                 <button
                   className="btn btn-warning mt-auto"
                   onClick={() => onAddToCart(product)}
                 >
-                  Agregar al carrito 🛒
+                  Explorar Café
                 </button>
               </div>
             </div>
