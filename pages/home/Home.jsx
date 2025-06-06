@@ -1,8 +1,8 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import Images from "../../components/Images";
-import HomeProducts from "../../components/HomeProducts";
-import ProductCard from "../../components/ProductCard";
+import Header from "../../components/global/Header";
+import Footer from "../../components/global/Footer";
+import Images from "../../components/homeComps/Images";
+import HomeProducts from "../../components/homeComps/HomeProducts";
+import ProductCard from "../../components/homeComps/ProductCard";
 import products from "../../products";
 
 function Home() {

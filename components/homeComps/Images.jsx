@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import "../src/App.css"; // Asegúrate de que la ruta sea correcta
 
-// Si estás usando imágenes locales, lo ideal sería importarlas así:
-// import img1 from "../images/frontpage/img1.png";
-// Pero si están en /public/images, las rutas pueden ser así:
 const images = [
   "/images/frontpage/img1.png",
   "/images/frontpage/img2.png",
