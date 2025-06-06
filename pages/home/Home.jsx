@@ -3,15 +3,15 @@ import Footer from "../../components/Footer";
 import Images from "../../components/Images";
 import HomeProducts from "../../components/HomeProducts";
 import ProductCard from "../../components/ProductCard";
+import products from "../../products";
 
 function Home() {
-  const verMas = (product) => {};
   return (
     <>
       <Header />
       <Images />
       <HomeProducts />
-      <ProductCard products={products} onAddToCart={verMas} />
+      <ProductCard products={products} />
       <Footer />
     </>
   );

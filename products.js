@@ -56,3 +56,4 @@ const products = [
       "Manzanas dulces y canela abrazadas en masa dorada. Sabe a hogar y calidez.",
   },
 ];
+export default products;
