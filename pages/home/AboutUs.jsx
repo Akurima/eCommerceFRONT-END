@@ -8,9 +8,9 @@ function About() {
 
       <main style={{ padding: "2rem", textAlign: "center" }}>
         <img
-          src="/images/frontpage/About Us.jpg"
+          src="/images/frontpage/2.png"
           alt="Café con clase"
-          style={{ maxWidth: "100%", height: "auto" }}
+          style={{ maxWidth: "100%", height: "100%" }}
         />
       </main>
       <Footer />

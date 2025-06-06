@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 
 const images = [
-  "/images/frontpage/Cafe Con Clase.jpg",
-
-  "/images/frontpage/Our Vision.jpg",
-  "/images/frontpage/Meet Our Barista.jpg",
-  "/images/frontpage/img5.png",
-  "/images/frontpage/img7.png",
-  "/images/frontpage/img8.png",
-  "/images/frontpage/Book Your Reservation.jpg",
+  "/images/frontpage/1.png",
+  "/images/frontpage/2.png",
+  "/images/frontpage/3.png",
+  "/images/frontpage/4.png",
+  "/images/frontpage/5.png",
+  "/images/frontpage/6.png",
+  "/images/frontpage/7.png",
 ];
 
 const Images = () => {
@@ -17,7 +16,7 @@ const Images = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 8000);
+    }, 8000); 
 
     return () => clearInterval(interval);
   }, []);
@@ -29,9 +28,7 @@ const Images = () => {
           key={i}
           src={img}
           alt={`Imagen ${i + 1}`}
-          className={`home-images position-absolute top-0 start-0 transition-opacity ${
-            i === index ? "opacity-100 z-1" : "opacity-0 z-0"
-          }`}
+          className={`home-images ${i === index ? "active" : ""}`}
         />
       ))}
     </div>

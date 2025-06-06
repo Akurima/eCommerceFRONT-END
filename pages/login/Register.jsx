@@ -22,7 +22,7 @@ const Register = () => {
               <label htmlFor="password" className="form-label">Contraseña</label>
               <input type="password" className="form-control input-animated" id="password" />
             </div>
-            <button type="submit" className="btn btn-primary w-100 btn-animated mt-3">
+            <button type="submit" className="btn boton w-100 btn-animated mt-3">
               Registrarse
             </button>
           </form>

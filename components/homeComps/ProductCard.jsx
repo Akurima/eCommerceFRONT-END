@@ -20,10 +20,10 @@ const ProductCard = ({ products, onAddToCart }) => {
                 <p className="card-text text-muted">{product.description}</p>
 
                 <button
-                  className="btn btn-warning mt-auto"
+                  className="btn boton mt-auto"
                   onClick={() => onAddToCart(product)}
                 >
-                  Explorar Café
+                  Ver Detalles
                 </button>
               </div>
             </div>
