@@ -11,6 +11,12 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+<<<<<<< HEAD
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+=======
+        <Route path="/About" element={<About />} />
+>>>>>>> 78f9a0c89fbf8abbe0a1809e4a8de026f362386d
       </Routes>
     </Router>
   );
