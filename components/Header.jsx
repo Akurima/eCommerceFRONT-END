@@ -4,6 +4,7 @@ import CallIcon from "@mui/icons-material/Call";
 import Person3Icon from "@mui/icons-material/Person3";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Link } from "react-router-dom";
 
 const Header = () => (
   <header className="header d-flex justify-content-between align-items-center px-4">
@@ -14,16 +15,24 @@ const Header = () => (
     {/* Íconos centrados */}
     <div className="d-flex justify-content-center align-items-center gap-4">
       <span className="icons-header active-icon">
-        <HomeIcon style={{ fontSize: 35 }} />
+        <Link className="nav-link" to="/">
+          <HomeIcon style={{ fontSize: 35 }} />
+        </Link>
       </span>
       <span className="icons-header">
-        <CoffeeIcon style={{ fontSize: 35 }} />
+        <Link className="nav-link" to="/store">
+          <CoffeeIcon style={{ fontSize: 35 }} />
+        </Link>
       </span>
       <span className="icons-header">
-        <CallIcon style={{ fontSize: 35 }} />
+        <Link className="nav-link" to="/about">
+          <CallIcon style={{ fontSize: 35 }} />
+        </Link>
       </span>
       <span className="icons-header">
-        <Person3Icon style={{ fontSize: 35 }} />
+        <Link className="nav-link" to="/login">
+          <Person3Icon style={{ fontSize: 35 }} />
+        </Link>
       </span>
     </div>
 
