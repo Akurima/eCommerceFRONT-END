@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 
 const images = [
-  "/images/frontpage/img1.png",
-  "/images/frontpage/img2.png",
-  "/images/frontpage/img3.png",
-  "/images/frontpage/img4.png",
+  "/images/frontpage/Cafe Con Clase.jpg",
+
+  "/images/frontpage/Our Vision.jpg",
+  "/images/frontpage/Meet Our Barista.jpg",
   "/images/frontpage/img5.png",
-  "/images/frontpage/img6.png",
   "/images/frontpage/img7.png",
   "/images/frontpage/img8.png",
-  "/images/frontpage/img9.png",
+  "/images/frontpage/Book Your Reservation.jpg",
 ];
 
 const Images = () => {
