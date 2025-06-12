@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const ProductCard = ({ products, onAddToCart }) => {
+const homeCards = ({ products, onAddToCart }) => {
   return (
     <div className="container my-4">
       <div className="row justify-content-center">
-        {products.map((product, index) => (
+        {products.slice(0, 4).map((product, index) => (
           <div
             key={index}
             className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4"
@@ -34,4 +34,4 @@ const ProductCard = ({ products, onAddToCart }) => {
   );
 };
 
-export default ProductCard;
+export default homeCards;
