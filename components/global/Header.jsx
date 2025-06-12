@@ -6,32 +6,28 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ toggleCart }) => {
   return (
-    <nav className="navbar navbar-expand-lg header px-3">
-      <div className="container-fluid">
-        <Link className="navbar-brand bruma" to="/">
-          Bruma
-        </Link>
+    <>
+      <nav className="navbar px-3 header fixed-top shadow-sm">
+        <div className="container-fluid">
+          <Link className="navbar-brand bruma" to="/">
+            Bruma
+          </Link>
 
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarContent"
-          aria-controls="navbarContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+          {/* Hamburguesa visible solo en móvil */}
+          <button
+            className="btn d-lg-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+            aria-controls="mobileMenu"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-        <div
-          className="collapse navbar-collapse justify-content-between"
-          id="navbarContent"
-        >
-          {/* Navegación centrada */}
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 d-flex flex-row gap-3">
+          {/* Navegación visible solo en desktop */}
+          <ul className="navbar-nav mx-auto d-none d-lg-flex flex-row gap-3">
             <li className="nav-item">
               <Link className="nav-link active-icon" to="/">
                 <HomeIcon style={{ fontSize: 30 }} />
@@ -54,8 +50,8 @@ const Header = () => {
             </li>
           </ul>
 
-          {/* Search + Cart */}
-          <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+          {/* Búsqueda y carrito solo en desktop */}
+          <div className="d-none d-lg-flex align-items-center gap-3">
             <div className="d-flex align-items-center border rounded px-2 py-1">
               <SearchIcon style={{ fontSize: 20, color: "#4b6858" }} />
               <input
@@ -65,11 +61,71 @@ const Header = () => {
                 style={{ width: "120px", color: "#4b6858", fontSize: "0.9rem" }}
               />
             </div>
-            <ShoppingCartIcon className="shop-icon" style={{ fontSize: 30 }} />
+            <button className="btn p-0 border-0" onClick={toggleCart}>
+              <ShoppingCartIcon
+                className="shop-icon"
+                style={{ fontSize: 30 }}
+              />
+            </button>
           </div>
         </div>
+      </nav>
+
+      {/* Offcanvas para móvil */}
+      <div
+        className="offcanvas offcanvas-end"
+        tabIndex="-1"
+        id="mobileMenu"
+        aria-labelledby="mobileMenuLabel"
+      >
+        <div className="offcanvas-header">
+          <h5 id="mobileMenuLabel">Menú</h5>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div className="offcanvas-body d-flex flex-column gap-3">
+          <Link className="nav-link" to="/" data-bs-dismiss="offcanvas">
+            <HomeIcon /> <span className="ms-2">Inicio</span>
+          </Link>
+          <Link className="nav-link" to="/store" data-bs-dismiss="offcanvas">
+            <CoffeeIcon /> <span className="ms-2">Tienda</span>
+          </Link>
+          <Link className="nav-link" to="/about" data-bs-dismiss="offcanvas">
+            <CallIcon /> <span className="ms-2">Contacto</span>
+          </Link>
+          <Link className="nav-link" to="/login" data-bs-dismiss="offcanvas">
+            <Person3Icon /> <span className="ms-2">Login</span>
+          </Link>
+
+          {/* Búsqueda y carrito visibles solo en offcanvas móvil */}
+          <div className="d-flex align-items-center border rounded px-2 py-1 mt-3">
+            <SearchIcon style={{ fontSize: 20, color: "#4b6858" }} />
+            <input
+              type="text"
+              className="form-control border-0 ms-2 p-0"
+              placeholder="Buscar"
+              style={{ width: "100%", color: "#4b6858", fontSize: "0.9rem" }}
+            />
+          </div>
+          <button
+            className="btn p-0 border-0 align-self-start mt-2"
+            onClick={() => {
+              toggleCart();
+              document.querySelector("#mobileMenu")?.classList.remove("show");
+              document.querySelector(".offcanvas-backdrop")?.remove();
+              document.body.classList.remove("offcanvas-backdrop");
+            }}
+          >
+            <ShoppingCartIcon className="shop-icon" style={{ fontSize: 30 }} />
+            <span className="ms-2">Carrito</span>
+          </button>
+        </div>
       </div>
-    </nav>
+    </>
   );
 };
 
