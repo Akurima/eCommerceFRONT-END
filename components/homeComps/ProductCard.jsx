@@ -35,7 +35,11 @@ const ProductCard = ({ products, onAddToCart }) => {
                   onClick={() => onAddToCart(product)}
                 >
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   Agregar al carrito
+=======
+                  🛒  
+>>>>>>> Stashed changes
 =======
                   🛒  
 >>>>>>> Stashed changes
