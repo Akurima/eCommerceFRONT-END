@@ -193,6 +193,14 @@
   color: #4a3d32;
 }
 
+.login-boton {
+  background-color: #fa9f42;
+  
+}
+.login-boton:hover {
+  background-color: #f37d06;
+}
+
 .boton {
    
   border: none;

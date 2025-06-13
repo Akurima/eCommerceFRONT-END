@@ -34,15 +34,9 @@ const ProductCard = ({ products, onAddToCart }) => {
                   className="btn boton mt-auto"
                   onClick={() => onAddToCart(product)}
                 >
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                  Agregar al carrito
-=======
+
                   🛒  
->>>>>>> Stashed changes
-=======
-                  🛒  
->>>>>>> Stashed changes
+
                 </button>
               </div>
             </div>

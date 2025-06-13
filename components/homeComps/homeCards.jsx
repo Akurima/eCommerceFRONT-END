@@ -23,7 +23,7 @@ const homeCards = ({ products, onAddToCart }) => {
                   className="btn boton mt-auto"
                   onClick={() => onAddToCart(product)}
                 >
-                  Saber más
+                  🛒
                 </button>
               </div>
             </div>
