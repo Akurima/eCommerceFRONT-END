@@ -4,16 +4,16 @@ const ProductCard = ({ products, onAddToCart }) => {
   return (
     <div className="container my-4 text-center">
       <p
-    style={{
-    fontWeight: 'bold',
-    fontSize: '3rem',
-    color: '#35564d',
-    display: 'inline-block',
-    boxShadow: 'inset 0 -6px 0 0 #FFA73D'  
-  }}
->
-  Menú
-</p>
+        style={{
+          fontWeight: "bold",
+          fontSize: "3rem",
+          color: "#35564d",
+          display: "inline-block",
+          boxShadow: "inset 0 -6px 0 0 #FFA73D",
+        }}
+      >
+        Menú
+      </p>
       <div className="row justify-content-center">
         {products.map((product, index) => (
           <div
@@ -31,12 +31,17 @@ const ProductCard = ({ products, onAddToCart }) => {
                 <p className="card-text text-muted">{product.description}</p>
 
                 <button
-                  className="btn boton mt-auto"
+                  className="boton btn btn-warning mt-auto"
                   onClick={() => onAddToCart(product)}
                 >
+                  Ordenar
+                </button>
 
-                  🛒  
-
+                <button
+                  className="boton2 btn mt-2"
+                  onClick={() => onAddToCart(product)}
+                >
+                  Preparación
                 </button>
               </div>
             </div>
