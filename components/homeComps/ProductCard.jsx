@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../../src/style/ProductsCard.css";
 
 const ProductCard = ({ products, onAddToCart }) => {
   return (
@@ -34,14 +35,14 @@ const ProductCard = ({ products, onAddToCart }) => {
                   className="boton btn btn-warning mt-auto"
                   onClick={() => onAddToCart(product)}
                 >
-                  Ordenar
+                  Ordenar ☕
                 </button>
 
                 <button
                   className="boton2 btn mt-2"
                   onClick={() => onAddToCart(product)}
                 >
-                  Preparación
+                  Saber más 👁‍🗨
                 </button>
               </div>
             </div>

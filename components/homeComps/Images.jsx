@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
+import "../../src/style/Images.css";
 
 const images = [
-  "/images/frontpage/1.png",
-  "/images/frontpage/2.png",
-  "/images/frontpage/3.png",
-  "/images/frontpage/4.png",
-  "/images/frontpage/5.png",
-  "/images/frontpage/6.png",
-  "/images/frontpage/7.png",
+  "/images/frontpage/1.svg",
+  "/images/frontpage/2.svg",
+  "/images/frontpage/3.svg",
+  "/images/frontpage/4.svg",
+  "/images/frontpage/5.svg",
+  "/images/frontpage/6.svg",
+  "/images/frontpage/7.svg",
 ];
 
 const Images = () => {
@@ -16,7 +17,7 @@ const Images = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 8000); 
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -28,7 +29,7 @@ const Images = () => {
           key={i}
           src={img}
           alt={`Imagen ${i + 1}`}
-          className={`home-images ${i === index ? "active" : ""}`}
+          className={`home-images img-fluid ${i === index ? "active" : ""}`}
         />
       ))}
     </div>

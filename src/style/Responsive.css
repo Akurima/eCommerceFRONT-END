@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+  .minimal-input {
+    width: 100px;
+  }
+
+  .cards-container {
+    gap: 12px;
+  }
+
+  .product-card {
+    flex: 1 1 100%;
+  }
+
+  .image-slider {
+    aspect-ratio: 1 / 1;
+  }
+}
