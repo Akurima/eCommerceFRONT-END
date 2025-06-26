@@ -113,17 +113,21 @@ const Header = ({ toggleCart }) => {
           ></button>
         </div>
         <div className="offcanvas-body d-flex flex-column gap-3">
-          <Link className="nav-link" to="/" data-bs-dismiss="offcanvas">
-            <HomeIcon /> <span className="ms-2">Inicio</span>
+          <Link className="nav-link" to="/">
+            <HomeIcon className="nav-item" />
+            <span className="ms-2">Inicio</span>
           </Link>
-          <Link className="nav-link" to="/store" data-bs-dismiss="offcanvas">
-            <CoffeeIcon /> <span className="ms-2">Tienda</span>
+          <Link className="nav-link" to="/store">
+            <CoffeeIcon className="nav-item" />
+            <span className="ms-2">Tienda</span>
           </Link>
-          <Link className="nav-link" to="/about" data-bs-dismiss="offcanvas">
-            <CallIcon /> <span className="ms-2">Contacto</span>
+          <Link className="nav-link" to="/about">
+            <CallIcon className="nav-item" />
+            <span className="ms-2">Contacto</span>
           </Link>
-          <Link className="nav-link" to="/login" data-bs-dismiss="offcanvas">
-            <Person3Icon /> <span className="ms-2">Login</span>
+          <Link className="nav-link" to="/login">
+            <Person3Icon className="nav-item" />
+            <span className="ms-2 t">Login</span>
           </Link>
 
           {/* Búsqueda y carrito visibles solo en offcanvas móvil */}

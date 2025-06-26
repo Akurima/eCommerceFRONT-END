@@ -4,6 +4,7 @@ import Images from "../../components/homeComps/Images";
 import HomeProducts from "../../components/homeComps/HomeProducts";
 import HomeCards from "../../components/homeComps/HomeCards";
 import products from "../../products";
+import DiscountModal from "../../components/homeComps/discountModal";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <Header />
       <Images />
       <HomeProducts />
+      <DiscountModal />
       <HomeCards products={products} />
       <Footer />
     </>

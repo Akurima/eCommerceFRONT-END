@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const homeCards = ({ products, onAddToCart }) => {
+const HomeCards = ({ products, onAddToCart }) => {
   return (
     <div className="container my-4">
       <div className="row justify-content-center">
@@ -34,4 +34,4 @@ const homeCards = ({ products, onAddToCart }) => {
   );
 };
 
-export default homeCards;
+export default HomeCards;
