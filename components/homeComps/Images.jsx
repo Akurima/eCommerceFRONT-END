@@ -1,3 +1,5 @@
+// src/components/homeComps/Images.jsx
+
 import { useEffect, useState } from "react";
 import "../../src/style/Images.css";
 
@@ -18,7 +20,6 @@ const Images = () => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 8000);
-
     return () => clearInterval(interval);
   }, []);
 

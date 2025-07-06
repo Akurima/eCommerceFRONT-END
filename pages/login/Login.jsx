@@ -13,9 +13,9 @@ const Login = () => {
   return (
     <>
       <Header />
-      <div className="login-wrapper">
-        <div className="background-overlay"></div>
-        <div className="d-flex justify-content-center align-items-center login-content">
+      <div className="login-wrapper split-layout">
+        {/* Izquierda: Formulario */}
+        <div className="login-content split-left">
           <div className="login-card shadow animate-fade-in">
             <h2 className="text-center mb-4">Bienvenido</h2>
             <form
@@ -28,6 +28,7 @@ const Login = () => {
                   })
                   .then(function (response) {
                     console.log(response);
+                    setToken(response.data.token);
                   })
                   .catch(function (error) {
                     console.log(error);
@@ -46,6 +47,7 @@ const Login = () => {
                   type="email"
                   className="form-control input-animated"
                   id="email"
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -60,6 +62,7 @@ const Login = () => {
                   type="password"
                   className="form-control input-animated"
                   id="password"
+                  required
                 />
               </div>
               <button
@@ -76,6 +79,11 @@ const Login = () => {
               </Link>
             </p>
           </div>
+        </div>
+
+        {/* Derecha: Imagen de fondo con overlay */}
+        <div className="login-image split-right">
+          <div className="background-overlay"></div>
         </div>
       </div>
       <Footer />

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Cómo preparar el café perfecto en casa",
+    "description": "Consejos simples para lograr una taza digna de cafetería desde tu cocina.",
+    "date": "2025-06-10",
+    "image": "https://www.lavazzausa.com/es/recipes-and-coffee-hacks/como-preparar-cafe-perfecto-en-9-pasos-con-la-chemex/_jcr_content/root/cust/customcontainer_copy/customcontainer_6905_629539573/image.coreimg.jpeg/1658315168155/d-m-recipe-chemex-method-small-03.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Beneficios de tomar café diariamente",
+    "description": "¿Sabías que el café puede mejorar tu concentración y estado de ánimo?",
+    "date": "2025-03-20",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8h-gUGUtIaT60HzKyUdF4WyorfAfNDBfQvg&s"
+  },
+  {
+    "id": 3,
+    "title": "Tipos de granos: ¿qué diferencia un arábica de un robusta?",
+    "description": "Una guía rápida para entender las variedades más comunes del mundo del café.",
+    "date": "2025-05-01",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIfMy1ZqiSeF1wXNhLtb8lLsAeAI_PZXbeYA&s"
+  }
+]

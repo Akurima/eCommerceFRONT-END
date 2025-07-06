@@ -1,0 +1,37 @@
+.event-agenda {
+  background-color: #fef9f1;
+  border-top: 4px solid #f5bc77;
+}
+
+.agenda-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #35564d;
+}
+
+.event-card {
+  background-color: white;
+  border-radius: 12px;
+  border-left: 5px solid #ffa73d;
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1b2859;
+  margin-bottom: 10px;
+}
+
+.event-date,
+.event-place,
+.event-desc {
+  font-size: 0.95rem;
+  color: #4a3d32;
+  margin-bottom: 6px;
+}

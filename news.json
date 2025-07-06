@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Lanzamos nuestra nueva línea de cafés orgánicos",
+    "description": "Descubrí nuestros nuevos sabores naturales, cultivados de forma sustentable.",
+    "date": "2025-06-01",
+    "image": "https://verdecora.es/blog/wp-content/uploads/2023/02/cafe-organico.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Evento de degustación gratuito este sábado",
+    "description": "Visitá nuestra tienda y disfrutá de una experiencia cafetera inolvidable.",
+    "date": "2025-06-15",
+    "image": "https://cdn.www.gob.pe/uploads/document/file/4706012/629A7674.jpg"
+  },
+  {
+    "id": 3,
+    "title": "¡2x1 en cafés fríos durante todo julio!",
+    "description": "No te pierdas esta promo ideal para refrescarte este invierno.",
+    "date": "2025-07-01",
+    "image": "https://www.debate.com.mx/__export/1734634014455/sites/debate/img/2024/12/19/starbucks_2x1.jpg_466078407.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Nueva sucursal en Montevideo",
+    "description": "Abrimos una nueva cafetería en el centro con degustaciones gratuitas.",
+    "date": "2025-07-03",
+    "image": "https://infonegocios.info/content/images/2022/07/21/157289/conversions/palacio-cafe-interna-medium-size.jpg"
+  }
+]

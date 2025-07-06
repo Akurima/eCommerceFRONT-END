@@ -1,0 +1,39 @@
+.newsletter-section {
+  background-color: #f3eacc;
+  border-top: 4px solid #ffa73d;
+  padding: 60px 0;
+}
+
+.newsletter-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #35564d;
+}
+
+.newsletter-subtitle {
+  font-size: 1.1rem;
+  color: #4a3d32;
+}
+
+.newsletter-input {
+  max-width: 400px;
+  padding: 0.6rem 1rem;
+  border: 2px solid #35564d;
+  border-radius: 8px;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.newsletter-btn {
+  background-color: #ffa73d;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background-color: #f9b572;
+}

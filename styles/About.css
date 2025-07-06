@@ -1,129 +1,338 @@
 @import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Playfair Display", serif;
+.about-page {
+  background: #fdf9f1;
+    font-family: "Philosopher", sans-serif;
+  color: #35564d;
+  padding-top: 6rem;
+  min-height: 100vh;
 }
 
-.about-section {
-  margin-top: 70px;
-  background-color: #f7f5f2;
-  color: #4b3832;
-  padding-bottom: 60px;
-  animation: fadeIn 0.8s ease-in-out;
+/* --- Introducción --- */
+.intro-section {
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+  padding: 0 1rem;
 }
 
-.about-section h1 {
-  font-family: "Georgia", serif;
-  font-weight: bold;
-  color: #3e2723;
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 20px;
+.title {
+  font-family: "Philosopher", sans-serif;
+  font-size: 3.4rem;
+  color: #35564d;
+  margin-bottom: 0.25rem;
   position: relative;
 }
 
-.about-section h1::after {
+.title::after {
   content: "";
-  width: 60px;
-  height: 4px;
-  background-color: #16a88c;
   display: block;
-  margin: 10px auto 0;
+  width: 60px;
+  height: 5px;
+  background: #ffa73d;
+  margin: 0.6rem auto 0;
+  border-radius: 3px;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #4b6858dd;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4b6858cc;
+}
+
+/* --- Sección Visión y Misión --- */
+.vision-mission-section {
+  max-width: 960px;
+  margin: 0 auto 5rem auto;
+  padding: 0 1rem;
+}
+
+.image-wrapper img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 12px 25px rgba(85, 47, 25, 0.15);
+  transition: transform 0.35s ease;
+  cursor: pointer;
+}
+
+.image-wrapper img:hover {
+  transform: scale(1.05) rotate(0.6deg);
+}
+
+.text-wrapper {
+  padding: 1rem 2rem;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block; /* Ajusta el ancho al texto */
+  font-family: "Philosopher", sans-serif;
+  font-size: 2.8rem;
+  color: #35564d;
+  margin-bottom: 1rem;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;      /* Igual ancho que el texto */
+  background: #ffa73d;
+  border-radius: 3px;
+  margin-top: 6px;  /* Separación con el texto */
+}
+
+.section-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #4b6858cc;
+}
+
+/* --- Galería de imágenes --- */
+.gallery-section {
+  max-width: 960px;
+  margin: 0 auto 5rem auto;
+  padding: 0 1rem;
+}
+
+.gallery-row {
+  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-col {
+  flex: 1 1 30%;
+  max-width: 320px;
+}
+
+.gallery-image-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(85, 47, 25, 0.18);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-image-wrapper img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.gallery-image-wrapper:hover {
+  box-shadow: 0 18px 42px rgba(255, 167, 61, 0.5);
+}
+
+.gallery-image-wrapper:hover img {
+  transform: scale(1.08);
+}
+
+.contact-section {
+  background-color: #fdf9f1;
+  padding: 3rem 1rem;
+    font-family: "Philosopher", sans-serif;
+}
+
+.contact-title {
+  font-family: "Philosopher", sans-serif;
+  font-size: 2.3rem;
+  color: #35564d;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.contact-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 4px;
+  background: #ffa73d;
   border-radius: 2px;
 }
 
-.about-section h3 {
-  color: #6d4c41;
-  font-size: 1.75rem;
-  margin-bottom: 15px;
+.form-wrapper {
+  flex: 1 1 380px;
+  max-width: 550px;
+  min-width: 360px;
 }
 
-.about-section p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #4b6858;
+/* Estilo de cada caja */
+.form-box {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
-/* 🟫 Texto en tarjetas */
-.text-card {
-  background-color: #ffffffde;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.text-card:hover {
+.form-box.hover-effect:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 167, 61, 0.3);
 }
 
-/* 🖼 Imágenes con marco elegante */
-.img-fluid {
-  border: 4px solid #e0d7ce; /* Marco beige */
-  border-radius: 18px; /* Esquinas suaves */
-  padding: 5px; /* Espacio dentro del marco */
-  background-color: #fffdfb; /* Fondo ligeramente cálido */
+.input-field {
+  border: 1.5px solid #c1bfa6;
+  border-radius: 0.6rem;
+  font-size: 1.05rem;
+  padding: 0.75rem 1rem;
+  color: #35564d;
+  background-color: #fcfbf7;
+  font-weight: 500;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #ffa73d;
+  box-shadow: 0 0 8px #ffa73d88;
+  outline: none;
+  background-color: #fff;
+}
+
+.input-field::placeholder {
+  color: #a9a899;
+  font-style: italic;
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, #35564d, #2d4e40);
+  color: #fdf9f1;
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 12px rgba(53, 86, 77, 0.5);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #ffa73d, #ff8f1f);
+  color: #35564d;
+  transform: scale(1.04);
+}
+
+@media (max-width: 1199px) {
+  .form-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+
+.btn-submit {
+  background: #ffa73d;
+  border: none;
+  padding: 0.8rem 3rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 0.7rem;
+  color: #fff;
+  box-shadow: 0 6px 18px #ff9e1fbb;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #ff9e1f;
+  box-shadow: 0 8px 25px #ff9e1fdd;
+  transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .intro-section,
+  .vision-mission-section,
+  .gallery-section,
+  .contact-section {
+    padding: 0 1rem;
+  }
+
+  .gallery-col {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .image-wrapper,
+  .text-wrapper {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.6rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
+  }
+}
+
+.values-section {
+  background-color: #FDF9F1;
+  padding: 3rem 1rem;
+  border-radius: 1rem;
+  max-width: 960px;
+  margin: 0 auto 5rem auto;
+  text-align: center; /* centra todo el contenido */
+}
+
+.value-title {
+  font-family: "Philosopher", sans-serif;
+  font-size: 2rem;
+  color: #35564d;
+  margin-bottom: 0.8rem;
+}
+
+.value-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b6858cc;
+  max-width: 320px;
+  margin: 0 auto 1.5rem auto; /* centra párrafos y espacio inferior */
+}
+
+.testimonials-section {
+  background-color: #fffaf3;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border: 1.5px solid #f1ead6;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
-.img-fluid:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 167, 61, 0.25);
 }
 
-.img-medio {
-  margin-top: 15px;
+.testimonial-text {
+  font-style: italic;
+  color: #35564d;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
-/* 📬 Contacto */
-.contact-section {
-  background-color: #fff3e0;
-  border-radius: 15px;
-  padding: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  animation: slideUp 1s ease-in-out;
+.testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid #ffa73d;
 }
 
-.intro-card {
-  margin-top: 80px;
-  background-color: #fffdfb;
-  padding: 30px 40px;
-  border-radius: 20px;
-  border: 2px solid #e0d7ce;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
-  max-width: 800px;
-  animation: fadeIn 1s ease-in-out;
-}
 
-.intro-card p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #5e493d;
-}
-
-/* 🎞️ Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

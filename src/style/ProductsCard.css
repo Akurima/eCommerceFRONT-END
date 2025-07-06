@@ -1,3 +1,4 @@
+/* Contenedor principal de tarjetas */
 .cards-container {
   width: 100%;
   height: 100%;
@@ -8,6 +9,7 @@
   justify-content: center;
 }
 
+/* Tarjeta individual del producto */
 .product-card {
   width: 100%;
   max-width: 260px;
@@ -25,6 +27,7 @@
   transform: scale(1.02);
 }
 
+/* Imagen superior del producto */
 .card-img-top {
   width: 100%;
   height: 180px;
@@ -33,23 +36,101 @@
   margin-bottom: 10px;
 }
 
+/* Título del producto */
 .card-title {
   font-size: 18px;
   text-align: center;
+  font-weight: 600;
+  color: #333;
 }
 
+/* Descripción del producto */
 .card-text {
   font-size: 14px;
   text-align: center;
   color: #4a3d32;
+  margin-bottom: 12px;
 }
 
+/* Botones */
 .boton,
 .boton2 {
   background-color: #f3eacc;
+  color: #333;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
 .boton:hover,
 .boton2:hover {
   background-color: #f9b572;
+}
+
+/* Título general del menú */
+.menu-title {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #35564d;
+  display: inline-block;
+  box-shadow: inset 0 -6px 0 0 #ffa73d;
+  margin-bottom: 2rem;
+}
+
+/* Títulos de categorías (Cafés, Dulces, etc.) */
+.category-title {
+  color: #35564d;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.category-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ffa73d;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+.filtro-estilizado {
+  border: 1px solid #35564d;
+  background-color: #fefefe;
+  color: #35564d;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.filtro-estilizado:focus {
+  border-color: #ffa73d;
+  box-shadow: 0 0 0 0.2rem rgba(255, 167, 61, 0.25);
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card {
+  width: 250px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
 }
