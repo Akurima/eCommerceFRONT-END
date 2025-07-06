@@ -30,23 +30,40 @@ const Header = ({ toggleCart }) => {
           {/* Navegación visible solo en desktop */}
           <ul className="nav navbar-nav mx-auto d-none d-lg-flex flex-row gap-4">
             <li className="nav-item">
+<<<<<<< Updated upstream
               <Link className="nav-link" to="/">
                 <HomeIcon className="nav-item" style={{ fontSize: 30 }} />
+=======
+              <Link className="nav-link active-icon" to="/">
+                <HomeIcon style={{ fontSize: 30, transform: "translateX(58px)"}} />
+>>>>>>> Stashed changes
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/store">
+<<<<<<< Updated upstream
                 <CoffeeIcon className="nav-item" style={{ fontSize: 30 }} />
+=======
+                <CoffeeIcon style={{ fontSize: 30, transform: "translateX(58px)" }} />
+>>>>>>> Stashed changes
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/about">
+<<<<<<< Updated upstream
                 <CallIcon className="nav-item" style={{ fontSize: 30 }} />
+=======
+                <CallIcon style={{ fontSize: 30, transform: "translateX(58px)" }} />
+>>>>>>> Stashed changes
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/login">
+<<<<<<< Updated upstream
                 <Person3Icon className="nav-item" style={{ fontSize: 30 }} />
+=======
+                <Person3Icon style={{ fontSize: 30, transform: "translateX(58px)"  }} />
+>>>>>>> Stashed changes
               </Link>
             </li>
           </ul>
