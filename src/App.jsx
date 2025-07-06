@@ -3,13 +3,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/login/Register";
 import Store from "../pages/store/Store";
-<<<<<<< Updated upstream
 import About from "../pages/home/AboutUs";
-=======
-
-import "./App.css";
-import About from "../pages/Home/AboutUs";
->>>>>>> Stashed changes
 
 import "../src/style/App.css";
 import "../src/style/Responsive.css";

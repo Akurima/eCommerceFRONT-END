@@ -29,12 +29,7 @@ const Images = () => {
           key={i}
           src={img}
           alt={`Imagen ${i + 1}`}
-<<<<<<< Updated upstream
           className={`home-images img-fluid ${i === index ? "active" : ""}`}
-=======
-          className={`home-images ${i === index ? "active" : ""}`}
-          style={{ maxWidth: "100%", height: "100%" }}
->>>>>>> Stashed changes
         />
       ))}
     </div>
