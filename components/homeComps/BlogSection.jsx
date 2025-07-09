@@ -13,7 +13,9 @@ const BlogSection = () => {
 
   return (
     <Container className="my-5 blog-section">
-      <h2 className="text-center mb-4">Artículos del Blog</h2>
+      <h2 className="text-center mb-4" style={{ color: "#16A88C" }}>
+        Artículos del Blog
+      </h2>
       <Row className="justify-content-center">
         {blogs.slice(0, 3).map(({ id, title, description, date, image }, i) => (
           <Col key={id} md={4} className="mb-4">
@@ -31,9 +33,9 @@ const BlogSection = () => {
                   </Card.Text>
                   <Card.Text>{description}</Card.Text>
                   <div className="mt-auto text-center">
-                    <Button 
-                      variant="outline-primary" 
-                      href={`/blog/${id}`} 
+                    <Button
+                      variant="outline-primary"
+                      href={`/blog/${id}`}
                       className="ver-mas-btn"
                     >
                       Leer más →

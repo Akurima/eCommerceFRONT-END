@@ -14,7 +14,9 @@ const NewsSection = () => {
 
   return (
     <Container className="my-5 news-section">
-      <h2 className="text-center mb-4 ">Novedades</h2>
+      <h2 className="text-center mb-4 " style={{ color: "#16A88C" }}>
+        Novedades
+      </h2>
       <Row className="justify-content-center">
         {visibleNews.map(({ id, title, description, date, image }, i) => (
           <Col key={id} md={4} className="mb-4">

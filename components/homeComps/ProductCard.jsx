@@ -1,14 +1,21 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../src/style/ProductsCard.css";
 import React, { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 const ProductCard = ({ products, onAddToCart }) => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
-  const cafes = products.filter(p => p.category?.toLowerCase() === "cafe");
-  const dulces = products.filter(p => p.category?.toLowerCase() === "postres");
-  const salados = products.filter(p => p.category?.toLowerCase() === "salados");
-  const bebidas = products.filter(p => p.category?.toLowerCase() === "bebidas");
+  const cafes = products.filter((p) => p.category?.toLowerCase() === "cafe");
+  const dulces = products.filter(
+    (p) => p.category?.toLowerCase() === "postres"
+  );
+  const salados = products.filter(
+    (p) => p.category?.toLowerCase() === "salados"
+  );
+  const bebidas = products.filter(
+    (p) => p.category?.toLowerCase() === "bebidas"
+  );
 
   const categorias = [
     { key: "todos", label: "Todos" },
@@ -18,35 +25,42 @@ const ProductCard = ({ products, onAddToCart }) => {
     { key: "bebidas", label: "Bebidas" },
   ];
 
-  // Función auxiliar para renderizar cada sección
+  // Función auxiliar para renderizar cada sección con animaciones
   const renderSeccion = (titulo, lista) => (
     <div className="my-5 container">
-      <h2 className="text-center mb-4 category-title" style={{ color: "#35564d" }}>{titulo}</h2>
+      <h2
+        className="text-center mb-4 category-title"
+        style={{ color: "#35564d" }}
+      >
+        {titulo}
+      </h2>
       <div className="cards-container">
         {lista.map((product, index) => (
-          <div key={index} className="product-card">
-            <img
-              src={product.image}
-              className="card-img-top"
-              alt={product.title}
-            />
-            <div className="card-body d-flex flex-column">
-              <h5 className="card-title">{product.title}</h5>
-              <p className="card-text">{product.description}</p>
-              <button
-                className="boton btn mt-auto"
-                onClick={() => onAddToCart(product)}
-              >
-                Ordenar ☕
-              </button>
-              <button
-                className="boton2 btn mt-2"
-                onClick={() => onAddToCart(product)}
-              >
-                Saber más 👁‍🗨
-              </button>
+          <Fade key={index} delay={index * 50} triggerOnce direction="up">
+            <div className="product-card">
+              <img
+                src={product.image}
+                className="card-img-top"
+                alt={product.title}
+              />
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title">{product.title}</h5>
+                <p className="card-text">{product.description}</p>
+                <button
+                  className="boton btn mt-auto"
+                  onClick={() => onAddToCart(product)}
+                >
+                  Ordenar ☕
+                </button>
+                <button
+                  className="boton2 btn mt-2"
+                  onClick={() => onAddToCart(product)}
+                >
+                  Saber más 👁‍🗨
+                </button>
+              </div>
             </div>
-          </div>
+          </Fade>
         ))}
       </div>
     </div>
