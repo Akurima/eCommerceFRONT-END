@@ -13,7 +13,12 @@ const Header = ({ toggleCart }) => {
       <nav className="navbar px-3 header fixed-top shadow-sm">
         <div className="container-fluid">
           <Link className="navbar-brand bruma" to="/">
-            Bruma
+            <img
+              src="../images/logo/logo.svg"
+              alt="logo bruma"
+              className="container"
+              style={{ userSelect: "none" }}
+            />
           </Link>
 
           {/* Hamburguesa visible solo en móvil */}
