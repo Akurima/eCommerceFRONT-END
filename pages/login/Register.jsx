@@ -1,11 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/global/Footer";
 import Header from "../../components/global/Header";
 import "../../styles/Login.css";
 import { Fade } from "react-awesome-reveal";
+import axios from "axios";
 
 const Register = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState(null);
+  const navigate = useNavigate();
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost:3000/users/register", {
+        email,
+        password,
+      });
+
+      setMessage("Usuario creado con éxito. Redirigiendo...");
+      setTimeout(() => navigate("/login"), 1500);
+    } catch (error) {
+      setMessage(error.response?.data?.error || "Error al registrar usuario.");
+    }
+  };
+
   return (
     <>
       <Header />
@@ -21,7 +43,8 @@ const Register = () => {
         <div className="login-content split-left">
           <div className="login-card shadow animate-fade-in">
             <h2 className="text-center mb-4">Crear cuenta</h2>
-            <form>
+
+            <form onSubmit={handleRegister}>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
                   Correo electrónico
@@ -30,8 +53,12 @@ const Register = () => {
                   type="email"
                   className="form-control input-animated"
                   id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
+
               <div className="mb-3">
                 <label htmlFor="password" className="form-label">
                   Contraseña
@@ -40,8 +67,12 @@ const Register = () => {
                   type="password"
                   className="form-control input-animated"
                   id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
+
               <button
                 type="submit"
                 className="btn boton w-100 btn-animated mt-3"
@@ -49,6 +80,12 @@ const Register = () => {
                 Registrarse
               </button>
             </form>
+
+            {/* Mensaje de éxito o error */}
+            {message && (
+              <p className="mt-3 text-center text-danger">{message}</p>
+            )}
+
             <p className="text-center mt-4">
               ¿Ya tienes cuenta?{" "}
               <Link to="/login" className="link-custom">
