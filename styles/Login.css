@@ -31,12 +31,13 @@
 .login-card {
   color: #4b6858;
   width: 100%;
-  max-width: 400px;
-  padding: 2rem;
+  max-width: 400px; /* igual que antes */
+  padding: 2rem; /* más compacto */
   border-radius: 16px;
   background-color: #e7dac8;
   backdrop-filter: blur(6px);
   animation: fadeInUp 0.8s ease-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Animación */
@@ -151,15 +152,4 @@
     max-width: 100%;
     padding: 2rem 1.5rem;
   }
-}
-
-.register-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem;
-  margin-top: 50px;
-  background-color: #f3eacc;
-  position: relative;
-  z-index: 2;
 }

@@ -10,54 +10,52 @@ const Register = () => {
     <>
       <Header />
       <div className="login-wrapper split-layout">
-        {/* Imagen de fondo a la izquierda */}
-        <div className="split-right">
-          <div className="background-overlay"></div>
+        {/* Izquierda: Imagen con animación */}
+        <div className="login-image split-right">
+          <Fade duration={1000} triggerOnce>
+            <div className="background-overlay" />
+          </Fade>
         </div>
 
-        {/* Formulario a la derecha */}
-        <div className="register-content">
-          <Fade direction="right" delay={100} triggerOnce>
-            <div className="login-card shadow">
-              <h2 className="text-center mb-4">Crear cuenta</h2>
-              <form>
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label">
-                    Correo electrónico
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control input-animated"
-                    id="email"
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="password" className="form-label">
-                    Contraseña
-                  </label>
-                  <input
-                    type="password"
-                    className="form-control input-animated"
-                    id="password"
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="btn login-boton w-100 btn-animated mt-3"
-                >
-                  Registrarse
-                </button>
-              </form>
-              <p className="text-center mt-4">
-                ¿Ya tienes cuenta?{" "}
-                <Link to="/login" className="link-custom">
-                  Inicia sesión
-                </Link>
-              </p>
-            </div>
-          </Fade>
+        {/* Derecha: Formulario */}
+        <div className="login-content split-left">
+          <div className="login-card shadow animate-fade-in">
+            <h2 className="text-center mb-4">Crear cuenta</h2>
+            <form>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Correo electrónico
+                </label>
+                <input
+                  type="email"
+                  className="form-control input-animated"
+                  id="email"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">
+                  Contraseña
+                </label>
+                <input
+                  type="password"
+                  className="form-control input-animated"
+                  id="password"
+                />
+              </div>
+              <button
+                type="submit"
+                className="btn boton w-100 btn-animated mt-3"
+              >
+                Registrarse
+              </button>
+            </form>
+            <p className="text-center mt-4">
+              ¿Ya tienes cuenta?{" "}
+              <Link to="/login" className="link-custom">
+                Inicia sesión
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
       <Footer />

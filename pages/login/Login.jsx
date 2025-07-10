@@ -17,76 +17,67 @@ const Login = () => {
       <div className="login-wrapper split-layout">
         {/* Izquierda: Formulario */}
         <div className="login-content split-left">
-          <Fade direction="left" delay={100} triggerOnce>
-            <div className="login-card shadow">
-              <h2 className="text-center mb-4">Bienvenido</h2>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  axios
-                    .post("/tokens", {
-                      email: inputEmail,
-                      password: inputPassword,
-                    })
-                    .then(function (response) {
-                      console.log(response);
-                      setToken(response.data.token);
-                    })
-                    .catch(function (error) {
-                      console.log(error);
-                    });
-                }}
+          <div className="login-card shadow animate-fade-in">
+            <h2 className="text-center mb-4">Bienvenido</h2>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                axios
+                  .post("/tokens", {
+                    email: inputEmail,
+                    password: inputPassword,
+                  })
+                  .then((response) => setToken(response.data.token))
+                  .catch((error) => console.log(error));
+              }}
+            >
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Correo electrónico
+                </label>
+                <input
+                  value={inputEmail}
+                  onChange={(e) => setInputEmail(e.target.value)}
+                  type="email"
+                  className="form-control input-animated"
+                  id="email"
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">
+                  Contraseña
+                </label>
+                <input
+                  value={inputPassword}
+                  onChange={(e) => setInputPassword(e.target.value)}
+                  type="password"
+                  className="form-control input-animated"
+                  id="password"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="btn login-boton w-100 btn-animated mt-3"
               >
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label">
-                    Correo electrónico
-                  </label>
-                  <input
-                    value={inputEmail}
-                    onChange={(e) => {
-                      setInputEmail(e.target.value);
-                    }}
-                    type="email"
-                    className="form-control input-animated"
-                    id="email"
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="password" className="form-label">
-                    Contraseña
-                  </label>
-                  <input
-                    value={inputPassword}
-                    onChange={(e) => {
-                      setInputPassword(e.target.value);
-                    }}
-                    type="password"
-                    className="form-control input-animated"
-                    id="password"
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="btn login-boton w-100 btn-animated mt-3"
-                >
-                  Iniciar sesión
-                </button>
-              </form>
-              <p className="text-center mt-4">
-                ¿Aún no estás registrado?{" "}
-                <Link to="/register" className="link-custom">
-                  Regístrate aquí
-                </Link>
-              </p>
-            </div>
-          </Fade>
+                Iniciar sesión
+              </button>
+            </form>
+            <p className="text-center mt-4">
+              ¿Aún no estás registrado?{" "}
+              <Link to="/register" className="link-custom">
+                Regístrate aquí
+              </Link>
+            </p>
+          </div>
         </div>
 
-        {/* Derecha: Imagen de fondo con overlay */}
+        {/* Derecha: Imagen de fondo con animación */}
         <div className="login-image split-right">
-          <div className="background-overlay"></div>
+          <Fade duration={1000} triggerOnce>
+            <div className="background-overlay" />
+          </Fade>
         </div>
       </div>
       <Footer />
