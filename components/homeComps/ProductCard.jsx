@@ -6,15 +6,18 @@ import { Fade } from "react-awesome-reveal";
 const ProductCard = ({ products, onAddToCart }) => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
-  const cafes = products.filter((p) => p.category?.toLowerCase() === "cafe");
+  // 🔁 Cambiamos Category (mayúscula) por category (minúscula)
+  const cafes = products.filter(
+    (p) => p.category?.name?.toLowerCase() === "cafe"
+  );
   const dulces = products.filter(
-    (p) => p.category?.toLowerCase() === "postres"
+    (p) => p.category?.name?.toLowerCase() === "postres"
   );
   const salados = products.filter(
-    (p) => p.category?.toLowerCase() === "salados"
+    (p) => p.category?.name?.toLowerCase() === "salados"
   );
   const bebidas = products.filter(
-    (p) => p.category?.toLowerCase() === "bebidas"
+    (p) => p.category?.name?.toLowerCase() === "bebidas"
   );
 
   const categorias = [
@@ -25,7 +28,6 @@ const ProductCard = ({ products, onAddToCart }) => {
     { key: "bebidas", label: "Bebidas" },
   ];
 
-  // Función auxiliar para renderizar cada sección con animaciones
   const renderSeccion = (titulo, lista) => (
     <div className="my-5 container">
       <h2
@@ -46,18 +48,25 @@ const ProductCard = ({ products, onAddToCart }) => {
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{product.title}</h5>
                 <p className="card-text">{product.description}</p>
+
                 <button
                   className="boton btn mt-auto"
                   onClick={() => onAddToCart(product)}
+                  disabled={product.stock === 0}
                 >
-                  Ordenar ☕
+                  {product.stock === 0 ? "No disponible" : "Ordenar ☕"}
                 </button>
+
                 <button
                   className="boton2 btn mt-2"
                   onClick={() => onAddToCart(product)}
                 >
                   Saber más 👁‍🗨
                 </button>
+
+                {product.stock === 0 && (
+                  <p className="text-danger fw-bold mt-2">Sin stock</p>
+                )}
               </div>
             </div>
           </Fade>
@@ -68,7 +77,6 @@ const ProductCard = ({ products, onAddToCart }) => {
 
   return (
     <div className="container my-4 text-center">
-      {/* Título principal */}
       <p
         style={{
           fontWeight: "bold",
@@ -81,7 +89,6 @@ const ProductCard = ({ products, onAddToCart }) => {
         Nuestro Menú
       </p>
 
-      {/* Filtro pequeño a la derecha */}
       <div className="row justify-content-end my-3">
         <div className="col-auto text-end">
           <label
@@ -106,7 +113,6 @@ const ProductCard = ({ products, onAddToCart }) => {
         </div>
       </div>
 
-      {/* Contenido según filtro */}
       {categoriaSeleccionada === "todos" && (
         <>
           {renderSeccion("Cafés", cafes)}
