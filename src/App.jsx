@@ -4,8 +4,8 @@ import Login from "../pages/login/Login";
 import Register from "../pages/login/Register";
 import Store from "../pages/store/Store";
 import About from "../pages/home/AboutUs";
-import Perfil from "../components/Perfil";
-import PrivateRoute from "../routes/PrivateRoute";
+import Perfil from "../src/components/Perfil";
+import PrivateRoute from "../src/routes/PrivateRoute";
 
 import "../src/style/App.css";
 import "../src/style/Responsive.css";

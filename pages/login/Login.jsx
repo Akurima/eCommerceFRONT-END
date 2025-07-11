@@ -7,7 +7,7 @@ import { Fade } from "react-awesome-reveal";
 
 // ✅ Importamos Redux
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../redux/authSlice"; // Asegurate que el path sea correcto
+import { loginUser } from "../../src/redux/authSlice"; // Asegurate que el path sea correcto
 
 const Login = () => {
   const [inputEmail, setInputEmail] = useState("");
