@@ -7,6 +7,8 @@ import { Fade } from "react-awesome-reveal";
 import axios from "axios";
 
 const Register = () => {
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(null);
@@ -17,6 +19,8 @@ const Register = () => {
 
     try {
       await axios.post("http://localhost:3000/users/register", {
+        firstname,
+        lastname,
         email,
         password,
       });
@@ -45,33 +49,32 @@ const Register = () => {
             <h2 className="text-center mb-4">Crear cuenta</h2>
 
             <form onSubmit={handleRegister}>
-
-            <div className="mb-3">
-                <label htmlFor="name" className="form-label">
+              <div className="mb-3">
+                <label htmlFor="firstname" className="form-label">
                   Nombre
                 </label>
                 <input
-                placeholder="Nombre"
+                  placeholder="Nombre"
                   type="text"
                   className="form-control input-animated"
                   id="firstname"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
                   required
                 />
               </div>
 
-                          <div className="mb-3">
-                <label htmlFor="surname" className="form-label">
+              <div className="mb-3">
+                <label htmlFor="lastname" className="form-label">
                   Apellido
                 </label>
                 <input
-                placeholder="Apellido"
+                  placeholder="Apellido"
                   type="text"
                   className="form-control input-animated"
                   id="lastname"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={lastname}
+                  onChange={(e) => setLastname(e.target.value)}
                   required
                 />
               </div>
@@ -81,7 +84,7 @@ const Register = () => {
                   Correo electrónico
                 </label>
                 <input
-                placeholder="tu@correo.com"
+                  placeholder="tu@correo.com"
                   type="email"
                   className="form-control input-animated"
                   id="email"
@@ -96,7 +99,7 @@ const Register = () => {
                   Contraseña
                 </label>
                 <input
-                placeholder="Contraseña"
+                  placeholder="Contraseña"
                   type="password"
                   className="form-control input-animated"
                   id="password"
