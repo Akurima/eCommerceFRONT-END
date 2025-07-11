@@ -28,10 +28,7 @@ function Home() {
       <BlogSection />
       <EventAgenda />
       <WhyChooseUs />
-      <NewsletterSection />
-
-      <TopProducts /> 
-
+      <NewsletterSection /> 
       <Footer />
     </>
   );
