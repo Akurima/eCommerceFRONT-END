@@ -1,6 +1,7 @@
 // src/redux/cartSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
+// Estado inicial del carrito
 const initialState = {
   items: [], // cada item será { id, title, price, image, quantity }
 };
@@ -21,21 +22,33 @@ const cartSlice = createSlice({
       }
     },
 
-    // Elimina un producto del carrito
+    // Elimina un producto del carrito por su ID
     removeFromCart(state, action) {
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
 
-    // Vacía el carrito por completo
+    // Vacía todo el carrito
     clearCart(state) {
       state.items = [];
     },
   },
 });
 
+// Exportamos las acciones para usarlas en los componentes
 export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
+
+// Exportamos el reducer para combinar en el store
 export default cartSlice.reducer;
 
-// ✅ Selector para contar el total de ítems en el carrito
+//////////////////////////////
+// 📦 SELECTORES DEL CARRITO
+//////////////////////////////
+
+// ✅ Selector: total de ítems en el carrito (suma cantidades)
+// Maneja el caso en que state.cart o items aún no estén definidos
 export const selectCartItemCount = (state) =>
-  state.cart.items.reduce((total, item) => total + item.quantity, 0);
+  state.cart?.items?.reduce((total, item) => total + item.quantity, 0) || 0;
+
+// ✅ Selector: lista completa de productos en el carrito
+// Devuelve [] si no hay items cargados
+export const selectCartItems = (state) => state.cart?.items || [];

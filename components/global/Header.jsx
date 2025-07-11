@@ -8,11 +8,18 @@ import { Link } from "react-router-dom";
 import "../../src/style/Header.css";
 
 // 🧠 Importamos Redux
-import { useSelector } from "react-redux";
-import { selectCartItemCount } from "../../redux/cartSlice";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectCartItemCount,
+  selectCartItems,
+  removeFromCart,
+} from "../../redux/cartSlice"; // ✅ incluye removeFromCart
 
 const Header = ({ toggleCart }) => {
+  const dispatch = useDispatch(); // 🧠 Inicializamos el dispatcher de Redux
+
   const itemCount = useSelector(selectCartItemCount); // 🎯 Cantidad total de ítems
+  const cartItems = useSelector(selectCartItems); // 🛒 Productos actuales en el carrito
 
   return (
     <>
@@ -105,7 +112,41 @@ const Header = ({ toggleCart }) => {
                   aria-label="Close"
                 ></button>
               </div>
-              <div className="offcanvas-body"></div>
+
+              <div className="offcanvas-body">
+                {cartItems.length === 0 ? (
+                  <p className="text-center">El carrito está vacío</p>
+                ) : (
+                  cartItems.map((item) => (
+                    <div
+                      key={item.id}
+                      className="d-flex align-items-center justify-content-between border-bottom py-2"
+                    >
+                      <div className="d-flex align-items-center">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          width="50"
+                          className="me-3"
+                        />
+                        <div>
+                          <h6 className="mb-1">{item.title}</h6>
+                          <small>Cantidad: {item.quantity}</small>
+                        </div>
+                      </div>
+                      <div>
+                        <strong>${item.price}</strong>
+                        <button
+                          className="btn btn-sm btn-outline-danger ms-2"
+                          onClick={() => dispatch(removeFromCart(item.id))}
+                        >
+                          🗑️
+                        </button>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
             </div>
           </div>
         </div>
