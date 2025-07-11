@@ -1,6 +1,5 @@
+// src/api/axiosInstance.js
 import axios from "axios";
-import store from "../redux/store"; // para acceder al dispatch
-import { logout } from "../redux/authSlice";
 
 const API_BASE_URL = "http://localhost:3000";
 
@@ -17,16 +16,18 @@ axiosInstance.interceptors.request.use((config) => {
   return config;
 });
 
-// 🛑 Intercepta errores 401 y desloguea
+// Intercepta errores 401 y redirige (sin usar Redux)
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     const status = error.response?.status;
 
     if (status === 401) {
-      // Token inválido o vencido → cerramos sesión
-      store.dispatch(logout());
-      // (opcional) podemos también forzar navegación
+      // Limpiamos manualmente el localStorage
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+
+      // Redirigimos al login
       window.location.href = "/login";
     }
 
