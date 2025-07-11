@@ -3,8 +3,9 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import { Provider } from "react-redux";
-import store from "../src/redux/store";
+import { store } from "./redux/store";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

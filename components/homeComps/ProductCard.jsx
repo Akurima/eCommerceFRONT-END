@@ -3,10 +3,17 @@ import "../../src/style/ProductsCard.css";
 import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 
-const ProductCard = ({ products, onAddToCart }) => {
+// 👉 Importamos hooks y action de Redux
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
+
+const ProductCard = ({ products }) => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
-  // 🔁 Cambiamos Category (mayúscula) por category (minúscula)
+  // 🎯 Instanciamos el dispatcher de Redux
+  const dispatch = useDispatch();
+
+  // 🔁 Filtros por categoría (asegurate que backend devuelva 'category.name')
   const cafes = products.filter(
     (p) => p.category?.name?.toLowerCase() === "cafe"
   );
@@ -51,7 +58,7 @@ const ProductCard = ({ products, onAddToCart }) => {
 
                 <button
                   className="boton btn mt-auto"
-                  onClick={() => onAddToCart(product)}
+                  onClick={() => dispatch(addToCart(product))}
                   disabled={product.stock === 0}
                 >
                   {product.stock === 0 ? "No disponible" : "Ordenar ☕"}
@@ -59,7 +66,7 @@ const ProductCard = ({ products, onAddToCart }) => {
 
                 <button
                   className="boton2 btn mt-2"
-                  onClick={() => onAddToCart(product)}
+                  onClick={() => console.log("Ver detalle", product)}
                 >
                   Saber más 👁‍🗨
                 </button>

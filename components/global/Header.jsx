@@ -7,7 +7,13 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import "../../src/style/Header.css";
 
+// 🧠 Importamos Redux
+import { useSelector } from "react-redux";
+import { selectCartItemCount } from "../../redux/cartSlice";
+
 const Header = ({ toggleCart }) => {
+  const itemCount = useSelector(selectCartItemCount); // 🎯 Cantidad total de ítems
+
   return (
     <>
       <nav className="navbar px-3 header fixed-top shadow-sm">
@@ -21,7 +27,6 @@ const Header = ({ toggleCart }) => {
             />
           </Link>
 
-          {/* Hamburguesa visible solo en móvil */}
           <button
             className="btn d-lg-none"
             type="button"
@@ -32,7 +37,6 @@ const Header = ({ toggleCart }) => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Navegación visible solo en desktop */}
           <ul className="nav navbar-nav mx-auto d-none d-lg-flex flex-row gap-4">
             <li className="nav-item">
               <Link className="nav-link" to="/">
@@ -56,7 +60,6 @@ const Header = ({ toggleCart }) => {
             </li>
           </ul>
 
-          {/* Búsqueda y carrito solo en desktop */}
           <div className="d-none d-lg-flex align-items-center gap-3">
             <div className="search-bar-minimal d-none d-lg-flex align-items-center">
               <SearchIcon style={{ fontSize: 20, color: "#4b6858" }} />
@@ -66,42 +69,48 @@ const Header = ({ toggleCart }) => {
                 placeholder="Buscar productos"
               />
             </div>
+
             <button
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasRight"
-              className="btn p-0 border-0"
+              className="btn p-0 border-0 position-relative"
               onClick={toggleCart}
             >
               <ShoppingCartIcon
                 className="shop-icon"
                 style={{ fontSize: 30 }}
               />
+              {itemCount > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {itemCount}
+                </span>
+              )}
             </button>
+
             <div
-              class="offcanvas offcanvas-end"
-              tabindex="-1"
+              className="offcanvas offcanvas-end"
+              tabIndex="-1"
               id="offcanvasRight"
               aria-labelledby="offcanvasRightLabel"
             >
-              <div class="offcanvas-header header">
-                <h5 class="offcanvas-title bruma" id="offcanvasRightLabel">
+              <div className="offcanvas-header header">
+                <h5 className="offcanvas-title bruma" id="offcanvasRightLabel">
                   Carrito de Compras
                 </h5>
                 <button
                   type="button"
-                  class="btn-close"
+                  className="btn-close"
                   data-bs-dismiss="offcanvas"
                   aria-label="Close"
                 ></button>
               </div>
-              <div class="offcanvas-body"></div>
+              <div className="offcanvas-body"></div>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Offcanvas para móvil */}
       <div
         className="offcanvas offcanvas-end"
         tabIndex="-1"
@@ -135,7 +144,6 @@ const Header = ({ toggleCart }) => {
             <span className="ms-2 t">Login</span>
           </Link>
 
-          {/* Búsqueda y carrito visibles solo en offcanvas móvil */}
           <div className="d-flex align-items-center border rounded px-2 py-1 mt-3">
             <SearchIcon style={{ fontSize: 20, color: "#4b6858" }} />
             <input
@@ -145,6 +153,7 @@ const Header = ({ toggleCart }) => {
               style={{ width: "100%", color: "#4b6858", fontSize: "0.9rem" }}
             />
           </div>
+
           <button
             className="btn p-0 border-0 align-self-start mt-2"
             onClick={() => {
