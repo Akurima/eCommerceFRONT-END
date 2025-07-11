@@ -45,11 +45,43 @@ const Register = () => {
             <h2 className="text-center mb-4">Crear cuenta</h2>
 
             <form onSubmit={handleRegister}>
+
+            <div className="mb-3">
+                <label htmlFor="name" className="form-label">
+                  Nombre
+                </label>
+                <input
+                placeholder="Nombre"
+                  type="text"
+                  className="form-control input-animated"
+                  id="firstname"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+
+                          <div className="mb-3">
+                <label htmlFor="surname" className="form-label">
+                  Apellido
+                </label>
+                <input
+                placeholder="Apellido"
+                  type="text"
+                  className="form-control input-animated"
+                  id="lastname"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
                   Correo electrónico
                 </label>
                 <input
+                placeholder="tu@correo.com"
                   type="email"
                   className="form-control input-animated"
                   id="email"
@@ -64,6 +96,7 @@ const Register = () => {
                   Contraseña
                 </label>
                 <input
+                placeholder="Contraseña"
                   type="password"
                   className="form-control input-animated"
                   id="password"
