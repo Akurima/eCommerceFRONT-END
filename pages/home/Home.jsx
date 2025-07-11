@@ -12,6 +12,7 @@ import BlogSection from "../../components/homeComps/BlogSection";
 import NewsSection from "../../components/homeComps/NewsSection";
 import NewsletterSection from "../../components/homeComps/NewsletterSection";
 import EventAgenda from "../../components/homeComps/Events";
+import TopProducts from "../../components/homeComps/TopProducts"; 
 
 function Home() {
   return (
@@ -25,9 +26,12 @@ function Home() {
       <HomeCards products={products} />
       <NewsSection />
       <BlogSection />
-            <EventAgenda />
+      <EventAgenda />
       <WhyChooseUs />
       <NewsletterSection />
+
+      <TopProducts /> 
+
       <Footer />
     </>
   );
